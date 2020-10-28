@@ -1,21 +1,33 @@
-@extends('layouts.app')
+@extends('layouts.app-internal')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+<div class="row justify-content-center mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">{{ __('Student consultation') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="{{ __('Search') }}"
+                                aria-label="{{ __('Search') }}" aria-describedby="button-search">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" id="button-search">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
                         </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <button class="btn btn-outline-secondary">
+                            {{ __("Register student") }}
+                        </button>
+                    </div>
                 </div>
+
+                {{ __('You are logged in!') }}
             </div>
         </div>
     </div>

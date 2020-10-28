@@ -20,8 +20,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" class="banner-login">
-        <nav class="navbar navbar-expand-md navbar-light bg-transparent shadow-sm fixed-top">
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -72,9 +72,23 @@
             </div>
         </nav>
 
-        <main class="h-100">
-            @yield('content')
-        </main>
+        <div class="container-fluid container-internal">
+            <div class="row h-100">
+                <nav class="col-auto h-100 menu px-0 border">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item active">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </nav>
+
+                <main class="col">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
     </div>
 </body>
 </html>
