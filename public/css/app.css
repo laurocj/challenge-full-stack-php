@@ -1,5 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+#app {
+  height: 100vh !important;
+}
+
+.banner-login {
+  background-image: url("/img/banner_animate.jpg");
+}
+
+.container-internal {
+  height: calc(100% - 56px);
+}
+
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
