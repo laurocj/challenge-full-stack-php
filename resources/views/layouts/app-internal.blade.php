@@ -85,7 +85,11 @@
                 </nav>
 
                 <main class="col">
-                    @yield('content')
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-12">
+                            @yield($_keyContent)
+                        </div>
+                    </div>
                 </main>
             </div>
         </div>

@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::middleware('auth')
+    ->prefix('cms')
+    ->group(function () {
+        Route::get('/', 'DashboardController@index');
+    });
