@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('education')->group(function() {
     Route::get('/', 'EducationController@index');
 });
+
+Route::middleware('auth')
+     ->prefix('cms/education')
+     ->group(function() {
+        Route::get('/', 'EducationController@index');
+        Route::resource('students', 'StudentController');
+    });
+

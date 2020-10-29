@@ -1,6 +1,6 @@
-@extends('education::layouts.master')
+@extends($_keyLayout)
 
-@section('content')
+@section($_keyContent)
     <h1>Hello World</h1>
 
     <p>
