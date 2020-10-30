@@ -48,5 +48,7 @@
     "Record not found": "Registro não foi encontrado",
     "Record has not been updated": "Registro não foi atualizado",
     "Deleted": "Apagado",
-    "Something went wrong and the record was not deleted": "Algo saiu errado e o registro não foi apagado"
+    "Something went wrong and the record was not deleted": "Algo saiu errado e o registro não foi apagado",
+    "Course": "Curso",
+    "Description" : "Descrição"
 }

@@ -22,5 +22,6 @@ Route::middleware('auth')
      ->group(function() {
         Route::get('/', 'EducationController@index');
         Route::resource('students', 'StudentController');
+        Route::resource('courses', 'CourseController');
     });
 
