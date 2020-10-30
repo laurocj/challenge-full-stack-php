@@ -1,0 +1,62 @@
+@extends($_keyLayout)
+
+@section($_keyContent)
+    <div class="card">
+        <div class="card-header d-flex justify-content-between">
+            <span class="h2 my-auto">{{ __('{{modelTitle}}')}}</span>
+            <a href="{{ route('{{modelRoute}}.create') }}" class="btn btn-outline-secondary">{{__('New record')}}</a>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12 col-sm-5 col-xl-3">
+
+                </div>
+                <div class="col-12 col-sm">
+                    <form class="navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="{{ __('Search') }}"
+                                aria-label="{{ __('Search') }}" aria-describedby="button-search">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" id="button-search">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="table-responsive mt-3 border-top">
+                <table class="table table-bordere table-striped">
+                    <thead>
+                        <th scope="col">Id</th>
+                        <th scope="col">{{ __('Name') }}</th>
+                        <th scope="col">{{ __('Actions') }}</th>
+                    </thead>
+                    <tbody>
+                        @foreach(${{modelNameLowerCase}}s as ${{modelNameLowerCase}})
+                        <tr>
+                            <th scope="row">{{${{modelNameLowerCase}}->id}}</th>
+                            <td>{{${{modelNameLowerCase}}->name}}</td>
+                            <td>
+                                <a href="{{route('{{modelRoute}}.edit',${{modelNameLowerCase}}->id)}}" class='btn btn-primary btn-sm'>{{ __('Edit') }}</a>
+
+                                @destroy(['route' => route('{{modelRoute}}.destroy',${{modelNameLowerCase}}->id)])
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-sm-12 col-md-5">
+
+                </div>
+                <div class="col-sm-12 col-md-7 d-flex justify-content-center">
+                    {!! ${{modelNameLowerCase}}s->links() !!}
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

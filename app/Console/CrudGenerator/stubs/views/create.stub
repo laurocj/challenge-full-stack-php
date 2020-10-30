@@ -1,0 +1,18 @@
+@extends($_keyLayout)
+
+@section($_keyContent)
+<form action="{{ route('{{modelRoute}}.store') }}" method="post" class="card">
+    @csrf
+    <div class="card-header d-flex justify-content-between">
+        <span class="h2 my-auto">{{__('New record')}} - {{__('{{modelTitle}}')}}</span>
+        <div class="col-md-auto">
+            <a class="btn btn-danger" href="{{ route('{{modelRoute}}.index') }}"> {{ __('Back') }}</a>
+            <button type="submit" class="btn btn-success">{{ __("Save") }}</button>
+        </div>
+    </div>
+
+    <div class="card-body">
+{{fieldMapCreate}}
+    </div>
+</form>
+@endsection
