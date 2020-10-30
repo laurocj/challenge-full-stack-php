@@ -56,7 +56,9 @@ trait MakeViews
             if ($value->Key != 'PRI' && $value->Field != 'deleted_at' && $value->Field != 'created_at' && $value->Field != 'updated_at') {
 
                 $type = 'text';
-                if (Str::is('*int*', $value->Type)) {
+                if (Str::is('*text*', $value->Type)) {
+                    $type = 'textarea';
+                } elseif (Str::is('*int*', $value->Type)) {
                     $type = 'number';
                 } else if (Str::is('*date*', $value->Type) || Str::is('*time*', $value->Type)) {
                     $type = 'date';

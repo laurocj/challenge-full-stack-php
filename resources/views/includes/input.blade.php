@@ -15,15 +15,23 @@ if($errors->has($name)) {
 <div class="form-group">
     <label for="{{ $id }}">{!! __($label) !!}</label>
 
-    <input id="{{ $id }}"
-        name="{{ $name }}"
-        class="{{ $class }}"
-        value="{{ $value }}"
-        type="{{ $type ?? 'text' }}"
-        @isset($help) aria-describedby="{{ $id }}Help" @endisset
-        @isset($placeholder) placeholder="{{ $placeholder }}" @endisset
-        {{ $attributes ?? null }}>
-
+    @if(isset($type) && $type == 'textarea')
+        <textarea id="{{ $id }}"
+            name="{{ $name }}"
+            class="{{ $class }}"
+            @isset($help) aria-describedby="{{ $id }}Help" @endisset
+            @isset($placeholder) placeholder="{{ $placeholder }}" @endisset
+            {{ $attributes ?? null }}>{{ $value }}</textarea>
+    @else
+        <input id="{{ $id }}"
+            name="{{ $name }}"
+            class="{{ $class }}"
+            value="{{ $value }}"
+            type="{{ $type ?? 'text' }}"
+            @isset($help) aria-describedby="{{ $id }}Help" @endisset
+            @isset($placeholder) placeholder="{{ $placeholder }}" @endisset
+            {{ $attributes ?? null }}>
+    @endif
     @isset($help)
         <small id="{{ $id }}Help" class="form-text text-muted">{{ $help }}</small>
     @endisset
