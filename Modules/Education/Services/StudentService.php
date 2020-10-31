@@ -102,7 +102,7 @@ class StudentService
 		$student->name = $name;
         $student->email = $email;
         $student->academic_record = $academic_record;
-		$student->cpf = $cpf;
+		$student->cpf = preg_replace('/[^0-9]/is', '', $cpf);
 
         DB::beginTransaction();
 
@@ -123,22 +123,19 @@ class StudentService
      * @param int $id
      * @param string $name
      * @param string $email
-	 * @param string $cpf
      *
      * @return boolean
      */
     public function update(
         int $id,
 		string $name,
-		string $email,
-		string $cpf
+		string $email
     ) {
 
         $student = $this->repository->find($id);
         $student->id = $id;
 		$student->name = $name;
 		$student->email = $email;
-		$student->cpf = $cpf;
 
         DB::beginTransaction();
 
