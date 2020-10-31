@@ -22,6 +22,10 @@ Route::middleware('auth')
      ->group(function() {
         Route::get('/', 'EducationController@index');
         Route::resource('students', 'StudentController');
+
+        Route::get('courses/search', 'CourseController@search')->name('courses.search');
         Route::resource('courses', 'CourseController');
+
+        Route::resource('teams', 'TeamController');
     });
 

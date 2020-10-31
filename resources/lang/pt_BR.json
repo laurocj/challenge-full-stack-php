@@ -1,5 +1,6 @@
 {
     "Name": "Nome",
+    "name": "nome",
     "E-Mail Address": "Email",
     "Password": "Senha",
     "Confirm Password": "Confirmação de senha",
@@ -51,5 +52,9 @@
     "Something went wrong and the record was not deleted": "Algo saiu errado e o registro não foi apagado",
     "Course": "Curso",
     "Courses": "Cursos",
-    "Description" : "Descrição"
+    "Description" : "Descrição",
+    "Team" : "Turma",
+    "Teams" : "Turmas",
+    "Start date" : "Data de início",
+    "End date" : "Data do término"
 }

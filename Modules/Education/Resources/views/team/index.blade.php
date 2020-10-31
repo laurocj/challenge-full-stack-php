@@ -3,8 +3,8 @@
 @section($_keyContent)
     <div class="card">
         <div class="card-header d-flex justify-content-between">
-            <span class="h2 my-auto">{{ __('Course')}}</span>
-            <a href="{{ route('courses.create') }}" class="btn btn-outline-secondary">{{__('New record')}}</a>
+            <span class="h2 my-auto">{{ __('Team')}}</span>
+            <a href="{{ route('teams.create') }}" class="btn btn-outline-secondary">{{__('New record')}}</a>
         </div>
         <div class="card-body">
             <div class="row">
@@ -14,8 +14,8 @@
                 <div class="col-12 col-sm">
                     <form class="navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="q" placeholder="{{ __('Search') }}"
-                                aria-label="{{ __('Search') }}" aria-describedby="button-search">
+                            <input type="text" name="q" class="form-control" placeholder="{{ __('Search') }} {{ __('Teams') }} {{ __('name') }}, {{ __('Courses') }} {{ __('name') }} ..."
+                                aria-label="{{ __('Search') }} {{ __('Teams') }} {{ __('name') }}, {{ __('Courses') }} {{ __('name') }} ..." aria-describedby="button-search">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" type="button" id="button-search">
                                     <i class="fas fa-search"></i>
@@ -31,20 +31,20 @@
                         <tr>
                             <th scope="col">Id</th>
                             <th scope="col">{{ __('Name') }}</th>
+                            <th scope="col">{{ __('Course') }}</th>
                             <th scope="col">{{ __('Actions') }}</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($courses as $course)
+                        @foreach($teams as $team)
                         <tr>
-                            <th scope="row">{{$course->id}}</th>
-                            <td>{{$course->name}}</td>
+                            <th scope="row">{{$team->id}}</th>
+                            <td>{{$team->name}}</td>
+                            <td>{{$team->course->name}}</td>
                             <td>
-                                <a href="{{route('teams.index',['course_id' => $course->id])}}" class='btn btn-primary btn-sm'><i class="fas fa-team"></i> {{ __('Turmas') }}</a>
+                                <a href="{{route('teams.edit',$team->id)}}" class='btn btn-primary btn-sm'><i class="fas fa-edit"></i> {{ __('Edit') }}</a>
 
-                                <a href="{{route('courses.edit',$course->id)}}" class='btn btn-primary btn-sm'><i class="fas fa-edit"></i> {{ __('Edit') }}</a>
-
-                                @destroy(['route' => route('courses.destroy',$course->id)])
+                                @destroy(['route' => route('teams.destroy',$team->id)])
                             </td>
                         </tr>
                         @endforeach
@@ -58,7 +58,7 @@
 
                 </div>
                 <div class="col-sm-12 col-md-7 d-flex justify-content-center">
-                    {!! $courses->links() !!}
+                    {!! $teams->links() !!}
                 </div>
             </div>
         </div>
