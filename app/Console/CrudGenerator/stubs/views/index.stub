@@ -14,7 +14,7 @@
                 <div class="col-12 col-sm">
                     <form class="navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="{{ __('Search') }}"
+                            <input type="text" name="q" class="form-control" placeholder="{{ __('Search') }}"
                                 aria-label="{{ __('Search') }}" aria-describedby="button-search">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" type="button" id="button-search">
