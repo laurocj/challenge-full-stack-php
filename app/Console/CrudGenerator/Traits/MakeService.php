@@ -12,6 +12,7 @@ trait MakeService
     protected function replaceAttributes()
     {
         $params = "";
+        $paramsDoc = "";
         $attributes = "";
         foreach ($this->getColumns() as $value) {
 
@@ -36,13 +37,15 @@ trait MakeService
 
 
             $params .= "\n\t\t".$param." $".$name.",";
+            $paramsDoc .= "\n\t * @param ".$param." $".$name;
        }
 
        $params = Str::replaceLast(',','',$params);
 
        return [
            '{{attributes}}' => $attributes,
-           '{{params}}' => $params
+           '{{params}}' => $params,
+           '{{paramsDoc}}' => $paramsDoc
        ];
     }
 

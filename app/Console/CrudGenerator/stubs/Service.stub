@@ -82,8 +82,7 @@ class {{modelName}}Service
     }
 
     /**
-     * Create {{modelName}}
-     * @param string $name
+     * Create {{modelName}}{{paramsDoc}}
      *
      * @return Boolean|{{modelName}}
      */
@@ -109,8 +108,7 @@ class {{modelName}}Service
     /**
      * Update {{modelName}}
      *
-     * @param int $id
-     * @param string $name
+     * @param int $id{{paramsDoc}}
      *
      * @return boolean
      */
