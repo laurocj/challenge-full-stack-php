@@ -26,11 +26,13 @@
                 </div>
             </div>
             <div class="table-responsive mt-3 border-top">
-                <table class="table table-bordere table-striped">
+                <table class="table table-bordere table-striped table-index">
                     <thead>
-                        <th scope="col">Id</th>
-                        <th scope="col">{{ __('Name') }}</th>
-                        <th scope="col">{{ __('Actions') }}</th>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">{{ __('Name') }}</th>
+                            <th scope="col">{{ __('Actions') }}</th>
+                        </tr>
                     </thead>
                     <tbody>
                         @foreach(${{modelNameLowerCase}}s as ${{modelNameLowerCase}})

@@ -38,3 +38,8 @@
         left: 0px;
     }
 }
+
+.table-index th:last-child, .table-index td:last-child {
+    width: 15%;
+    text-align: center;
+}
