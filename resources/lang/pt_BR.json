@@ -56,5 +56,7 @@
     "Team" : "Turma",
     "Teams" : "Turmas",
     "Start date" : "Data de início",
-    "End date" : "Data do término"
+    "End date" : "Data do término",
+    "Active" : "Ativo",
+    "Shift": "Turno"
 }
