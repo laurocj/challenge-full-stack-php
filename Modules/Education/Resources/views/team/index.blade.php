@@ -32,7 +32,7 @@
                             <th scope="col">Id</th>
                             <th scope="col">{{ __('Name') }}</th>
                             <th scope="col">{{ __('Course') }}</th>
-                            <th scope="col">{{ __('Actions') }}</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,9 +42,8 @@
                             <td>{{$team->name}}</td>
                             <td>{{$team->course->name}}</td>
                             <td>
-                                <a href="{{route('teams.edit',$team->id)}}" class='btn btn-primary btn-sm'><i class="fas fa-edit"></i> {{ __('Edit') }}</a>
-
                                 @destroy(['route' => route('teams.destroy',$team->id)])
+                                <a href="{{route('teams.edit',$team->id)}}" class='btn btn-primary btn-sm'><i class="fas fa-edit"></i> {{ __('Edit') }}</a>
                             </td>
                         </tr>
                         @endforeach

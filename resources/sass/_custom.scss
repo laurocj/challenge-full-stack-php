@@ -39,7 +39,7 @@
     }
 }
 
-.table-index th:last-child, .table-index td:last-child {
-    width: 21%;
-    text-align: center;
+.table-index th:last-child,
+.table-index td:last-child {
+    text-align: right;
 }
