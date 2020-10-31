@@ -12,7 +12,7 @@
             id="{{ $id }}"
             value="{{ $value ?? true }}"
             {{ $name ? 'name=' . $name : '' }}
-            {{ $elements ?? '' }}>
+            {{ $attributes ?? '' }}>
         <label class="form-check-label" for="{{ $id }}">{!! $label !!}</label>
 
         @isset($nameErrors)

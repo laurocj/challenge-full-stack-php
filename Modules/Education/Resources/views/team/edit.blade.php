@@ -17,7 +17,7 @@
             'type' => 'checkbox',
             'name' => 'active',
 			"value" => $team->active,
-			"elements" => "checked=".$team->active
+			"attributes" => "checked=".$team->active
         ])
         @input([
             'label' => __('Name'),
