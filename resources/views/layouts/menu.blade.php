@@ -8,6 +8,10 @@
             aria-selected="{{ Route::is('courses.*') ? 'true' : 'false' }}"
             href="{{ route('courses.index') }}">{{ __('Courses') }}</a>
 
+        <a class="list-group-item list-group-item-action {{ Route::is('enrollments.*') ? 'active' : '' }}"
+            aria-selected="{{ Route::is('enrollments.*') ? 'true' : 'false' }}"
+            href="{{ route('enrollments.index') }}">{{ __('Enrollments') }}</a>
+
         <a class="list-group-item list-group-item-action {{ Route::is('teams.*') ? 'active' : '' }}"
             aria-selected="{{ Route::is('teams.*') ? 'true' : 'false' }}"
             href="{{ route('teams.index') }}">{{ __('Teams') }}</a>

@@ -21,11 +21,16 @@ Route::middleware('auth')
      ->prefix('cms/education')
      ->group(function() {
         Route::get('/', 'EducationController@index');
+
+        Route::get('students/search', 'StudentController@search')->name('students.search');
         Route::resource('students', 'StudentController');
 
         Route::get('courses/search', 'CourseController@search')->name('courses.search');
         Route::resource('courses', 'CourseController');
 
+        Route::get('teams/search', 'TeamController@search')->name('teams.search');
         Route::resource('teams', 'TeamController');
+
+        Route::resource('enrollments', 'EnrollmentController');
     });
 

@@ -58,5 +58,8 @@
     "Start date" : "Data de início",
     "End date" : "Data do término",
     "Active" : "Ativo",
-    "Shift": "Turno"
+    "Shift": "Turno",
+    "Enrollments" : "Matrículas",
+    "Enrollment" : "Matrícula",
+    "Date" : "Data"
 }
