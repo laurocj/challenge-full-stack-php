@@ -32,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Blade::include('includes.input', 'input');
         Blade::include('includes.check', 'check');
+        Blade::include('includes.select', 'select');
         Blade::include('includes.destroy', 'destroy');
     }
 }
