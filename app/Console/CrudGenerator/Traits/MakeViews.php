@@ -113,7 +113,7 @@ trait MakeViews
     protected function getValue($column, $model)
     {
         if($model == "check") {
-            $column .= ",\n\t\t\t".'"elements" => "checked=".${{modelNameLowerCase}}->'.$column;
+            $column .= ",\n\t\t\t".'"attributes" => "checked=".${{modelNameLowerCase}}->'.$column;
         }
         $replace = $this->buildReplacements();
 
