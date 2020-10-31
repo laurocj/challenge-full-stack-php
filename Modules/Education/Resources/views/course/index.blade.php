@@ -40,7 +40,7 @@
                             <th scope="row">{{$course->id}}</th>
                             <td>{{$course->name}}</td>
                             <td>
-                                <a href="{{route('courses.edit',$course->id)}}" class='btn btn-primary btn-sm'>{{ __('Edit') }}</a>
+                                <a href="{{route('courses.edit',$course->id)}}" class='btn btn-primary btn-sm'><i class="fas fa-edit"></i> {{ __('Edit') }}</a>
 
                                 @destroy(['route' => route('courses.destroy',$course->id)])
                             </td>

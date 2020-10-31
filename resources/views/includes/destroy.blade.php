@@ -10,8 +10,6 @@ $id = isset($id) ? $id : Str::random(20);
     @method('DELETE')
     @csrf
 </form>
-{{-- <button type="submit" class="btn btn-danger btn-sm"> <i class="fa fa-trash"></i> {{ __('Delete') }}</button> --}}
-
 <a href="#" class="btn btn-danger btn-sm"
  onclick="if (confirm(&quot;Deseja mesmo remover esse registro ?&quot;)) { document.post_{{ $id }}.submit(); } event.returnValue = false; return false;">
  <i class="fa fa-trash"></i> {{ __('Delete') }}</a>
