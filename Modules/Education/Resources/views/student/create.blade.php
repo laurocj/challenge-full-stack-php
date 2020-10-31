@@ -35,6 +35,7 @@
 
         @input([
             'label' => __('CPF'),
+            'class' =>  'cpf',
             'type' => 'text',
             'placeholder' => 'Informe o número do documento',
             'name' => 'cpf'

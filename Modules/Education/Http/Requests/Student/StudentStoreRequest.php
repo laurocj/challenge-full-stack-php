@@ -2,6 +2,7 @@
 
 namespace Modules\Education\Http\Requests\Student;
 
+use App\Rules\ValidaCpf;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StudentStoreRequest extends FormRequest
@@ -17,6 +18,16 @@ class StudentStoreRequest extends FormRequest
     }
 
     /**
+     * To replace the attribute name in the error message.
+     */
+    public function attributes()
+    {
+        return [
+            'academic_record' => 'RA'
+        ];
+    }
+
+    /**
      * Get the validation rules that apply to the request.
      *
      * @return array
@@ -25,9 +36,9 @@ class StudentStoreRequest extends FormRequest
     {
         return [
 			'name' => 'required|string|max:255',
-			'email' => 'required|string|max:255|email',
-			'academic_record' => 'required',
-			'cpf' => 'required|string|max:255',
+			'email' => 'required|string|max:255|email|unique:students',
+			'academic_record' => 'required|unique:students',
+			'cpf' => ['required', 'unique:students', 'string', 'max:14', new ValidaCpf]
         ];
     }
 }

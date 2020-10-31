@@ -25,8 +25,7 @@ class StudentUpdateRequest extends FormRequest
     {
         return [
 			'name' => 'required|string|max:255',
-			'email' => 'required|string|max:255|email',
-			'cpf' => 'required|string|max:255',
+			'email' => 'required|string|max:255|email'
         ];
     }
 }

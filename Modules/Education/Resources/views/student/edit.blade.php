@@ -33,14 +33,17 @@
                 'type' => 'text',
                 'placeholder' => 'Informe o registro acadêmico',
                 'name' => 'academic_record',
+                'attributes' => 'readonly',
                 'value' => $student->academic_record
             ])
 
             @input([
                 'label' => __('CPF'),
+                'class' =>  'cpf',
                 'type' => 'text',
                 'placeholder' => 'Informe o número do documento',
                 'name' => 'cpf',
+                'attributes' => 'readonly',
                 'value' => $student->cpf
             ])
     </div>
