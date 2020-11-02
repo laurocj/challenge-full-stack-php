@@ -98,7 +98,7 @@ class TeamService
 		string $name,
 		string $shift,
 		string $start_date,
-		string $end_date,
+		?string $end_date,
 		int $course_id
     ) {
 
@@ -110,6 +110,8 @@ class TeamService
 		$team->start_date = $start_date;
 		$team->end_date = $end_date;
 		$team->course_id = $course_id;
+
+        $this->valid($team);
 
         DB::beginTransaction();
 
@@ -143,7 +145,7 @@ class TeamService
 		string $name,
 		string $shift,
 		string $start_date,
-		string $end_date,
+		?string $end_date,
 		int $course_id
     ) {
 
@@ -154,7 +156,9 @@ class TeamService
 		$team->shift = $shift;
 		$team->start_date = $start_date;
 		$team->end_date = $end_date;
-		$team->course_id = $course_id;
+        $team->course_id = $course_id;
+
+        $this->valid($team);
 
         DB::beginTransaction();
 
@@ -167,5 +171,12 @@ class TeamService
         }
 
         return $isOk;
+    }
+
+    private function valid(Team $team)
+    {
+        if(isset($team->end_date) && $team->start_date > $team->end_date)
+            throw new \Exception("End date previous to start date", 1);
+
     }
 }

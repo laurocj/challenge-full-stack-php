@@ -6,10 +6,10 @@
 >
     <testsuites>
         <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/Unit</directory>
+            <directory suffix="Test.php">./Modules/Education/Tests/Unit</directory>
         </testsuite>
         <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/Feature</directory>
+            <directory suffix="Test.php">./Modules/Education/Tests/Feature</directory>
         </testsuite>
     </testsuites>
     <filter>
@@ -17,6 +17,7 @@
             <directory suffix=".php">./app</directory>
         </whitelist>
     </filter>
+
     <php>
         <server name="APP_ENV" value="testing"/>
         <server name="BCRYPT_ROUNDS" value="4"/>

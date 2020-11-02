@@ -26,7 +26,8 @@ class TeamStoreRequest extends FormRequest
         return [
 			'name' => 'required|string|max:255',
 			'shift' => 'required|string|max:255',
-			'start_date' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'nullable|after:start_date',
 			'course_id' => 'required|numeric',
         ];
     }
