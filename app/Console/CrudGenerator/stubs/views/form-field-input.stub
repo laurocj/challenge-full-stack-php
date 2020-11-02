@@ -1,0 +1,5 @@
+        @input([
+            'label' => __('{{title}}'),
+            'type' => '{{type}}',
+            'name' => '{{column}}'{{value}}
+        ])

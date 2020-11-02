@@ -1,0 +1,18 @@
+@extends($_keyLayout)
+
+@section($_keyContent)
+<form action="{{ route('{{modelRoute}}.update', ${{modelNameLowerCase}}->id) }}" class="card" method="post">
+    @method('put')
+    @csrf
+    <div class="card-header d-flex justify-content-between">
+        <span class="h2 my-auto">{{__('Edit record')}} - {{__('{{modelTitle}}')}}</span>
+        <div class="col-md-auto">
+            <a class="btn btn-danger" href="{{ route('{{modelRoute}}.index') }}"> {{ __('Back') }}</a>
+            <button type="submit" class="btn btn-success">{{ __("Save") }}</button>
+        </div>
+    </div>
+    <div class="card-body">
+{{fieldMapUpdate}}
+    </div>
+</form>
+@endsection
