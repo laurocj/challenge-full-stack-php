@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Teams extends Migration
+class CreateStudentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class Teams extends Migration
      */
     public function up()
     {
-        Schema::create('teams', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->boolean('active');
             $table->string('name');
-            $table->string('shift');
-            $table->date('start_date');
-            $table->date('end_date')->nullable();
-            $table->unsignedBigInteger('course_id');
+            $table->string('email')->unique();
+            $table->string('academic_record')->unique();
+            $table->string('cpf');
             $table->timestamps();
-            $table->foreign('course_id')->references('id')->on('courses');
         });
     }
 
@@ -33,6 +30,6 @@ class Teams extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teams');
+        Schema::dropIfExists('students');
     }
 }
