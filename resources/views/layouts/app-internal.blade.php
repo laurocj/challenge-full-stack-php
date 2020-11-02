@@ -78,6 +78,8 @@
 
                 <main class="col">
                     <div class="row justify-content-center mt-4">
+                        @component('includes.alert')
+                        @endcomponent
                         <div class="col-12">
                             @yield($_keyContent)
                         </div>
