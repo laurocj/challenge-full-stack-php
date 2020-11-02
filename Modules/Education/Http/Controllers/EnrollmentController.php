@@ -100,7 +100,7 @@ class EnrollmentController extends CmsController
             return $this->returnIndexStatusNotOk(__('Something went wrong and the record was not saved'));
         }
 
-        return $this->returnIndexStatusOk($enrollment->name . __('created'));
+        return $this->returnIndexStatusOk($enrollment->name . __(' created'));
     }
 
     /**

@@ -104,7 +104,7 @@ class TeamController extends CmsController
             return $this->returnIndexStatusNotOk(__('Something went wrong and the record was not saved'));
         }
 
-        return $this->returnIndexStatusOk($team->name . __('created'));
+        return $this->returnIndexStatusOk($team->name . __(' created'));
     }
 
     /**
