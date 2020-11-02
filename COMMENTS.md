@@ -15,18 +15,18 @@ Decisão da arquitetura utilizada
 Lista de bibliotecas de terceiros utilizadas
 ===================
 
-php
-"laravel/ui": "2.4",
-"lucascudo/laravel-pt-br-localization": "^1.1",
-"nwidart/laravel-modules": "^7.1"
- "mockery/mockery": "^1.3.1",
-"phpunit/phpunit": "^8.5"
+PHP
+laravel/ui
+lucascudo/laravel-pt-br-localization
+nwidart/laravel-modules
+mockery
+phpunit
 
-js 
-"@fortawesome/fontawesome-free": "^5.15.1",
-"@ttskch/select2-bootstrap4-theme": "^1.3.4",
-"jquery-mask-plugin": "^1.14.16",
-"select2": "^4.0.13"
+JS
+fontawesome
+jquery-mask-plugin
+select2
+ttskch/select2-bootstrap4-theme
 
 O que você melhoraria se tivesse mais tempo
 ===================
